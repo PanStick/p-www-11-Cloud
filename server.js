@@ -11,6 +11,11 @@ app.use(parser);
 
 app.use(express.static("public"));
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+  });
+  
+
 app.get("/users", function (req, res) {
   users.getUsers((err, data) => {
     console.log("data: ", data);
