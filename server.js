@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var users = require("./userDatabase");
+const path = require('path');
+
 
 var app = express();
 
@@ -11,7 +13,6 @@ app.use(parser);
 
 app.use(express.static("public"));
 
-const path = require('path');
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
